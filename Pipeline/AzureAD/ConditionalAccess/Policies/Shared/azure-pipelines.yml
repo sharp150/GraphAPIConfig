@@ -97,8 +97,8 @@ stages:
               -ClientID ${env:CLIENTID} `
               -ClientSecret ${env:CLIENTSECRET} `
               -ConditionalAccessPolicies $ValidateCAPolicies `
-              #-RemoveExistingPolicies `
               -UpdateExistingPolicies
+              #-RemoveExistingPolicies `
               #-Force
 
           # Create directory for artifact, if it does not exist
