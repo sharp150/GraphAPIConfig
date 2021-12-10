@@ -75,7 +75,7 @@ stages:
       name: CloneToolKit
       displayName: Clone Toolkit repo
       inputs:
-        script: 'git clone --branch $(Branch) --single-branch https://github.com/sharp150/ToolKit.git'
+        script: 'git clone --branch $(Branch) --single-branch https://github.com/wesley-trust/ToolKit.git'
         workingDirectory: '$(System.ArtifactsDirectory)'
     - task: PowerShell@2
       name: InvokeWTPlanCAPolicy
@@ -98,6 +98,7 @@ stages:
               -ClientSecret ${env:CLIENTSECRET} `
               -ConditionalAccessPolicies $ValidateCAPolicies `
               -UpdateExistingPolicies `
+              -RemoveExistingPolicies `
               -Force
 
           # Create directory for artifact, if it does not exist
