@@ -17,7 +17,7 @@ stages:
       name: CloneGraphAPI
       displayName: Clone Graph API repo
       inputs:
-        script: 'git clone --branch $(Branch) --single-branch https://github.com/wesley-trust/GraphAPI.git'
+        script: 'git clone --branch $(Branch) --single-branch https://github.com/sharp150/GraphAPI.git'
         workingDirectory: '$(System.ArtifactsDirectory)'
     - task: PowerShell@2
       name: InvokeWTValidateCAPolicy
@@ -69,13 +69,13 @@ stages:
       name: CloneGraphAPI
       displayName: Clone Graph API repo
       inputs:
-        script: 'git clone --branch $(Branch) --single-branch https://github.com/wesley-trust/GraphAPI.git'
+        script: 'git clone --branch $(Branch) --single-branch https://github.com/sharp150/GraphAPI.git'
         workingDirectory: '$(System.ArtifactsDirectory)'
     - task: CmdLine@2
       name: CloneToolKit
       displayName: Clone Toolkit repo
       inputs:
-        script: 'git clone --branch $(Branch) --single-branch https://github.com/wesley-trust/ToolKit.git'
+        script: 'git clone --branch $(Branch) --single-branch https://github.com/sharp150/ToolKit.git'
         workingDirectory: '$(System.ArtifactsDirectory)'
     - task: PowerShell@2
       name: InvokeWTPlanCAPolicy
@@ -97,7 +97,7 @@ stages:
               -ClientID ${env:CLIENTID} `
               -ClientSecret ${env:CLIENTSECRET} `
               -ConditionalAccessPolicies $ValidateCAPolicies `
-              -RemoveExistingPolicies `
+              #-RemoveExistingPolicies `
               -UpdateExistingPolicies `
               -Force
 
@@ -144,7 +144,7 @@ stages:
             name: CloneGraphAPI
             displayName: Clone Graph API repo
             inputs:
-              script: 'git clone --branch $(Branch) --single-branch https://github.com/wesley-trust/GraphAPI.git'
+              script: 'git clone --branch $(Branch) --single-branch https://github.com/sharp150/GraphAPI.git'
               workingDirectory: '$(System.ArtifactsDirectory)'
           - task: CmdLine@2
             name: CloneToolKit
